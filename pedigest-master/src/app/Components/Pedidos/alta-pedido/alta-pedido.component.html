@@ -1,0 +1,57 @@
+
+<div class="jumbotron">
+        <div class="container">
+          <h1 class="display-5">Crear Pedido</h1>
+        </div>
+</div>
+
+<div class="container1">
+    <div *ngIf="camareros">
+        <br>
+        <h5 class="first paddingTop">Id</h5>
+        <p-spinner size="30" [(ngModel)]="newPedido.id" ></p-spinner>
+        
+        <h5 class="first paddingTop">Mesa</h5>
+        <p-spinner size="30" [(ngModel)]="newPedido.mesa" ></p-spinner>
+        
+        <h5 class="first paddingTop">Camareros</h5>
+        <p-dropdown [options]="camareros" [(ngModel)]="newPedido.camarero"  placeholder="Selecciona un Camarero" optionLabel="nombre" [showClear]="true"></p-dropdown>
+  
+        <h5 class="first paddingTop">Productos</h5>
+        <p-dropdown [options]="productos" [(ngModel)]="producto"  placeholder="Selecciona un producto" optionLabel="nombre" [showClear]="true"></p-dropdown>
+        
+        <h5 class="first paddingTop ">Cantidad</h5>
+        <p-spinner size="30" [(ngModel)]="cantidad" ></p-spinner>
+        
+        <div class="paddingTop"></div>
+        <button pButton type="button" label="Añadir Producto" class="ui-button-info" (click)="addLineaProducto()"></button>
+    </div>
+
+<br>
+
+    <p-table [columns]="cols" [value]="lineasPedido" class="centro">
+        <ng-template pTemplate="caption">
+            Productos
+        </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Nombre</th>
+                    <th>Cantidad</th>
+                    <th>Precio</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-linea>
+                <tr>
+                    <td>{{linea.producto.nombre}}</td>
+                    <td>{{linea.cantidad}}</td>
+                    <td>{{linea.cantidad * linea.producto.precio |currency:'EUR':true}}</td>
+                </tr>
+            </ng-template>
+        <ng-template pTemplate="summary">
+            Hay {{lineasPedido?.length}} productos
+        </ng-template>
+    </p-table>
+
+    <div class="paddingTop"></div>
+    <button pButton type="button" label="Proceder" class="ui-button-success" (click)="addPedido()"></button>
+</div>

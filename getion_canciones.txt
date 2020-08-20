@@ -1,0 +1,46 @@
+Gestión de Canciones
+====================
+
+Modelo
+======
+
+    codigo:number;
+    titulo:string;
+    autor:string;
+    explicita:boolean;
+    release:Date;
+
+
+Material: 
+
+4 componentes
+1 clase de modelo
+1 modulo para el routing
+1 servicio
+
+Componentes
+============
+
+HomeComponent => página de bienvenida
+
+AltaComponent => formulario para crear canciones. 
+
+- El botón "CREAR" me lleva a ListComponent	
+
+ListComponent => listado de todas las canciones
+
+- Cada fila del listado dispondrá de un link "eliminar" que eliminará la canción
+- Cada fila del listado dispondrá de un link "editarr" que navegará al EditComponent (advanced)
+
+EditComponent => formulario para editar canciones
+
+Servicios
+=========
+
+CancionService => Dispondrá de los 4 métodos CRUD más getAll(). El servicio incluye algunas canciones de demo.
+
+
+
+
+
+

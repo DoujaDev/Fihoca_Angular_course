@@ -1,0 +1,13 @@
+<p>contratacion works!</p>
+<form>
+    Nombre:<br>
+    <input type="text" name="nombre" [(ngModel)]="persona.nombre">
+    <br>
+    edad:<br>
+    <input type="number" name="edad" [(ngModel)]="persona.edad">
+    <br>
+    <input type="checkbox" name="activo" [(ngModel)]="persona.activo"> I have a bike<br>
+    <br><br>
+    <input type="submit" value="Submit" (click)="go()">
+  </form> 
+  

@@ -1,0 +1,47 @@
+
+<div class="jumbotron">
+        <div class="container">
+          <h1 class="display-5">Detalle Pedido {{id}}</h1>
+        </div>
+</div>
+
+<div class="container1">
+        
+    <div class="ui-inputgroup paddingTop">
+        <span class="ui-inputgroup-addon" style="background-color:#007ad9; color:aliceblue;">Fecha</span>
+        <input type="text" pInputText value="{{pedido.fecha | date:'dd/MM/yyyy'}}" disabled style="color:#000000; font-size: 16px;">      
+    </div>
+        
+    <div class="ui-inputgroup paddingTop">
+        <span class="ui-inputgroup-addon" style="background-color:#007ad9; color:aliceblue;">Mesa</span>
+        <input type="text" pInputText value="{{pedido.mesa}}" disabled style="color:#000000; font-size: 16px;">      
+    </div>
+         
+    <div class="ui-inputgroup paddingTop">
+        <span class="ui-inputgroup-addon azul" style="background-color:#007ad9; color:aliceblue;">Camarero</span>
+        <input type="text" pInputText value="{{pedido.camarero.nombre}}" disabled style="color:#000000; font-size: 16px;">      
+    </div>
+    <div class="paddingTop"></div>
+    <p-table [columns]="cols" [value]="lineasPedidos" class="centro">
+ 
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-lineaPedido>
+            <tr>
+                <td>{{lineaPedido.producto.nombre}}</td>
+                <td>{{lineaPedido.cantidad}}</td>
+                <td>{{lineaPedido.precio | currency:'EUR':true}}</td> 
+                <td>{{lineaPedido.cantidad * lineaPedido.precio | number:'0.2-2'}}</td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            Hay {{lineasPedidos?.length}} productos
+        </ng-template>
+    </p-table>
+</div>

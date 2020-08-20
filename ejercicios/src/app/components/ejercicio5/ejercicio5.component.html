@@ -1,0 +1,27 @@
+<h1>LISTA DE AMIGOS</h1>
+
+<table id="customers">
+    <tr>
+        <th>AMIGOS</th>
+    </tr>
+    <tr *ngFor ="let amigo of amigos" (click)="eliminarAmigo(amigo)">
+            <td>{{amigo}}</td>
+      </tr>
+        
+</table>
+
+<table id="customers">
+    <tr>
+        <th>ACREEDORES</th>
+    </tr>
+    <tr *ngFor ="let acreedor of acreedores" (click)="eliminarAcreedor(acreedor)">
+            <td>{{acreedor}}</td>
+      </tr>
+        
+</table>
+<button type="submit" (click)="reset()">RESET</button>
+
+<p>***************************************+</p>
+
+<p>fecha : {{fecha | trimestrador}}</p>
+<p>numero: {{numero | numformatter}}</p>

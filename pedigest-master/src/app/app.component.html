@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="#">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Productos
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="/productos" >Listado</a>
+        <a class="dropdown-item" routerLink="/productos/alta">Alta</a>
+      </div>
+    </li>
+   
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Camareros
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" routerLink="/camareros">Listado</a>
+        <a class="dropdown-item" routerLink="/camareros/alta">Alta</a>
+      </div>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Pedidos
+      </a>
+      <div class="dropdown-menu">
+          <a class="dropdown-item" routerLink="/pedidos" >Listado</a>
+        <a class="dropdown-item" routerLink="/pedidos/alta">Alta</a>
+      </div>
+    </li>
+  
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

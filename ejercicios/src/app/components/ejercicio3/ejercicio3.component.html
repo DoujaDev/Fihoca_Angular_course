@@ -1,0 +1,19 @@
+<h1>CONFIGURADOR DE PIZZA</h1>
+Tipo pizza: <select [(ngModel)]="tipoPizza"  >
+    <option *ngFor="let pizza of tipoPizzas" [ngValue]="pizza" >{{pizza.nombre}}</option>
+</select>
+<br>
+Champiñones : Sí:<input type="radio" name="cham" value="sí"  [(ngModel)]="champinyones">
+              No:<input type="radio" name="cham" value="no" [(ngModel)]="champinyones">  
+              <br>
+Queso : Sí:<input type="radio" name="ques" value="sí" [(ngModel)]="queso">
+        No:<input type="radio" name="ques" value="no" [(ngModel)]="queso">  
+
+<br>
+Tamaño : <select  [(ngModel)]="tamanyoPizza">
+    <option *ngFor="let tamanyo of tamanyosPizzas">{{tamanyo}}</option>
+</select>
+<br>
+<button type ="submit" (click)="calcularPrecio()">CALCULAR PRECIO</button>
+<p>resultado: {{resultado}}</p>
+<br>

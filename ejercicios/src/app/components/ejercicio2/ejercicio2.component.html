@@ -1,0 +1,13 @@
+<h1>Convertidor de monedas</h1>
+moneda 1 <input type="number" [(ngModel)]="valorMoneda1" (change)="convertir(1)">
+
+<select [(ngModel)]="tipoMoneda1" (change)="cambioTipoMoneda(1)">
+    <option *ngFor="let moneda of monedas">{{moneda | asteriscador}}</option>
+</select><br>
+
+moneda 2 <input type="number" [(ngModel)]="valorMoneda2" (change)="convertir(2)">
+
+<select [(ngModel)]="tipoMoneda2" (change)="cambioTipoMoneda(2)">
+    <option *ngFor="let moneda of monedas">{{moneda}}</option>
+</select><br>
+
